@@ -51,6 +51,11 @@ else
   tput sgr0
 fi
 
+echo -e "${ORANGE}Creating a new branch for this work"
+
+git checkout -b $(date +"%Y%m%d-%H%M%S")
+
+
 #Namespace
 read -p "Enter desired namespace to deploy prometheus [$DEFAULT_NAMESPACE]: " NAMESPACE
 NAMESPACE=${NAMESPACE:-$DEFAULT_NAMESPACE}
@@ -402,12 +407,22 @@ else
   tput sgr0
 fi
 
+echo -e "${BLUE}Commiting local changes"
+git add -A
+
+if [ "$?" != "0" ]; then
+  echo -e "${RED}Unable to add changes"
+  exit 1
+fi
+
+git commit -m "Ran deploy"
+
 ######################################################################################################
 #cleanup
 ######################################################################################################
-echo
-echo -e "${BLUE}Removing local changes"
-git checkout -- .
+#echo
+#echo -e "${BLUE}Removing local changes"
+#git checkout -- .
 
 echo
 echo -e "${GREEN}Done"
