@@ -3,11 +3,11 @@ kind: Service
 metadata:
   name: grafana
   labels:
-    app: grafana
+    k8s-app: grafana
 spec:
   ports:
   - port: 3000
     protocol: TCP
     targetPort: http
   selector:
-    app: grafana
+    k8s-app: grafana

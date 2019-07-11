@@ -3,16 +3,16 @@ kind: ServiceMonitor
 metadata:
   name: grafana
   labels:
-    app: grafana
     k8s-app: grafana
 spec:
   selector:
     matchLabels:
-      app: grafana
+      k8s-app: grafana
   namespaceSelector:
     matchNames:
-    - prometheus
+    - CUSTOM_NAMESPACE
   endpoints:
   - targetPort: 3000
     interval: 30s
+    path: /metrics
   jobLabel: grafana-k8s
