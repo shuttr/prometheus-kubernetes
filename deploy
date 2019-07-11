@@ -55,7 +55,7 @@ echo -e "${ORANGE}Creating a new branch for this work"
 
 GITOUT=$(git checkout -b $(date +"%Y%m%d-%H%M%S") 2>&1)
 
-if [ "$?" != "0" ]; them
+if [ "$?" != "0" ]; then
   echo -e "${RED}${GITOUT}"
   echo -e "${RED}FATAL error checking out branch, exiting"
   exit 1
