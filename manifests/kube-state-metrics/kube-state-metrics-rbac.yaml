@@ -28,10 +28,17 @@ rules:
   - daemonsets
   - deployments
   - replicasets
+  - ingresses
   verbs: ["list", "watch"]
 - apiGroups: ["apps"]
   resources:
   - statefulsets
+  - daemonsets
+  - deployments
+  verbs: ["list", "watch"]
+- apiGroups: ["policy"]
+  resources:
+  - poddisruptionbudgets
   verbs: ["list", "watch"]
 - apiGroups: ["batch"]
   resources:
@@ -41,6 +48,10 @@ rules:
 - apiGroups: ["autoscaling"]
   resources:
   - horizontalpodautoscalers
+  verbs: ["list", "watch"]
+- apiGroups: ["certificates.k8s.io"]
+  resources:
+  - certificatesigningrequests
   verbs: ["list", "watch"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -54,7 +65,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: kube-state-metrics
-  namespace: CUSTOM_NAMESPACE
+  namespace: prometheus
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role

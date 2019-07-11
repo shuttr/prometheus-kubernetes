@@ -1,0 +1,18 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: grafana
+  labels:
+    app: grafana
+    k8s-app: grafana
+spec:
+  selector:
+    matchLabels:
+      app: grafana
+  namespaceSelector:
+    matchNames:
+    - prometheus
+  endpoints:
+  - targetPort: 3000
+    interval: 30s
+  jobLabel: grafana-k8s
