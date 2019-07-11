@@ -1,10 +1,13 @@
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: STORAGE_CLASS_TYPE
-provisioner: STORAGE_CLASS_PROVISIONER
-parameters:
-  type: STORAGE_CLASS_TYPE
+#
+# COMMENTED BECAUSE AWS 
+#
+#apiVersion: storage.k8s.io/v1
+#kind: StorageClass
+#metadata:
+#  name: STORAGE_CLASS_TYPE
+#provisioner: STORAGE_CLASS_PROVISIONER
+#parameters:
+#  type: STORAGE_CLASS_TYPE
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: Prometheus
