@@ -328,7 +328,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "max(kube_deployment_spec_replicas{deployment=~\"^[[deployment_name]]$\",namespace=~\"^[[deployment_namespace]]$\"}) without (instance,pod)",
+              "expr": "sum(sum(kube_deployment_spec_replicas{deployment=~\"^[[deployment_name]]$\",namespace=~\"^[[deployment_namespace]]$\"}) by (deployment, namespace))",
               "intervalFactor": 2,
               "metric": "kube_deployment_spec_replicas",
               "refId": "A",
@@ -410,7 +410,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "min(kube_deployment_status_replicas_available{deployment=~\"^[[deployment_name]]$\",namespace=~\"^[[deployment_namespace]]$\"}) without (instance,pod)",
+              "expr": "sum(sum(kube_deployment_status_replicas_available{deployment=~\"^[[deployment_name]]$\",namespace=~\"^[[deployment_namespace]]$\"}) by (deployment,namespace))",
               "intervalFactor": 2,
               "refId": "A",
               "step": 600
@@ -491,7 +491,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "max(kube_deployment_status_observed_generation{deployment=~\"^[[deployment_name]]$\",namespace=~\"^[[deployment_namespace]]$\"}) without (instance,pod)",
+              "expr": "max(max(kube_deployment_status_observed_generation{deployment=~\"^[[deployment_name]]$\",namespace=~\"^[[deployment_namespace]]$\"}) by (deployment,namespace))",
               "intervalFactor": 2,
               "legendFormat": "",
               "refId": "A",
@@ -573,7 +573,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "max(kube_deployment_metadata_generation{deployment=~\"^[[deployment_name]]$\",namespace=~\"^[[deployment_namespace]]$\"}) without (instance,pod)",
+              "expr": "max(max(kube_deployment_metadata_generation{deployment=~\"^[[deployment_name]]$\",namespace=~\"^[[deployment_namespace]]$\"}) by (deployment,namespace))",
               "intervalFactor": 2,
               "legendFormat": "",
               "refId": "A",
@@ -635,35 +635,35 @@ data:
             {
               "expr": "max(kube_deployment_status_replicas{deployment=~\"^[[deployment_name]]$\",namespace=~\"^[[deployment_namespace]]$\"}) without (instance,pod)",
               "intervalFactor": 2,
-              "legendFormat": "current replicas",
+              "legendFormat": "{{deployment}}/{{namespace}} current",
               "refId": "A",
               "step": 30
             },
             {
               "expr": "min(kube_deployment_status_replicas_available{deployment=~\"^[[deployment_name]]$\",namespace=~\"^[[deployment_namespace]]$\"}) without (instance,pod)",
               "intervalFactor": 2,
-              "legendFormat": "available",
+              "legendFormat": "{{deployment}}/{{namespace}} available",
               "refId": "B",
               "step": 30
             },
             {
               "expr": "max(kube_deployment_status_replicas_unavailable{deployment=~\"^[[deployment_name]]$\",namespace=~\"^[[deployment_namespace]]$\"}) without (instance,pod)",
               "intervalFactor": 2,
-              "legendFormat": "unavailable",
+              "legendFormat": "{{deployment}}/{{namespace}} unavailable",
               "refId": "C",
               "step": 30
             },
             {
               "expr": "min(kube_deployment_status_replicas_updated{deployment=~\"^[[deployment_name]]$\",namespace=~\"^[[deployment_namespace]]$\"}) without (instance,pod)",
               "intervalFactor": 2,
-              "legendFormat": "updated",
+              "legendFormat": "{{deployment}}/{{namespace}} updated",
               "refId": "D",
               "step": 30
             },
             {
-              "expr": "max(kube_deployment_spec_replicas{deployment=~\"^[[deployment_name]]$\",namespace=~\"^[[deployment_namespace]]$\"}) without (instance,pod)",
+              "expr": "max(kube_deployment_spec_replicas{deployment=~\"^[[deployment_name]]$\",namespace=~\"^[[deployment_namespace]]$\"}) without (instance, pod)",
               "intervalFactor": 2,
-              "legendFormat": "desired",
+              "legendFormat": "{{deployment}}/{{namespace}} desired",
               "refId": "E",
               "step": 30
             }
@@ -791,7 +791,7 @@ data:
                   }, 
                   "datasource": "Prometheus",
                   "allValue": ".+",
-                  "includeAll": false,
+                  "includeAll": true,
                   "hide": 0,
                   "label": "Name",
                   "multi": false,

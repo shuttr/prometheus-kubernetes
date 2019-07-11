@@ -329,7 +329,7 @@ data:
                         "tableColumn": "",
                         "targets": [
                             {
-                                "expr": "max(kube_statefulset_replicas{job=\"kube-state-metrics\",namespace=~\"^[[namespace]]$\",statefulset=~\"^[[statefulset]]$\"}) without (instance,pod)",
+                                "expr": "sum(sum(kube_statefulset_replicas{job=\"kube-state-metrics\",namespace=~\"^[[namespace]]$\",statefulset=~\"^[[statefulset]]$\"}) by (statefulset,namespace))",
                                 "format": "time_series",
                                 "intervalFactor": 2,
                                 "legendFormat": ""
@@ -408,7 +408,7 @@ data:
                         "tableColumn": "",
                         "targets": [
                             {
-                                "expr": "min(kube_statefulset_status_replicas_current{job=\"kube-state-metrics\",namespace=~\"^[[namespace]]$\",statefulset=~\"^[[statefulset]]$\"}) without (instance,pod)",
+                                "expr": "sum(sum(kube_statefulset_status_replicas_current{job=\"kube-state-metrics\",namespace=~\"^[[namespace]]$\",statefulset=~\"^[[statefulset]]$\"}) by (statefulset,namespace))",
                                 "format": "time_series",
                                 "intervalFactor": 2,
                                 "legendFormat": ""
@@ -487,7 +487,7 @@ data:
                         "tableColumn": "",
                         "targets": [
                             {
-                                "expr": "max(kube_statefulset_status_observed_generation{job=\"kube-state-metrics\",namespace=~\"^[[namespace]]$\",statefulset=~\"^[[statefulset]]$\"}) without (instance,pod)",
+                                "expr": "max(max(kube_statefulset_status_observed_generation{job=\"kube-state-metrics\",namespace=~\"^[[namespace]]$\",statefulset=~\"^[[statefulset]]$\"}) by (statefulset,namespace))",
                                 "format": "time_series",
                                 "intervalFactor": 2,
                                 "legendFormat": ""
@@ -645,35 +645,35 @@ data:
                                 "expr": "max(kube_statefulset_replicas{job=\"kube-state-metrics\",statefulset=~\"^[[statefulset]]$\",namespace=~\"^[[namespace]]$\"}) without (instance,pod)",
                                 "format": "time_series",
                                 "intervalFactor": 2,
-                                "legendFormat": "replicas specified",
+                                "legendFormat": "{{statefulset}}/{{namespace}} replicas requested",
                                 "refId": "A"
                             },
                             {
                                 "expr": "max(kube_statefulset_status_replicas{job=\"kube-state-metrics\",statefulset=~\"^[[statefulset]]$\",namespace=~\"^[[namespace]]$\"}) without (instance,pod)",
                                 "format": "time_series",
                                 "intervalFactor": 2,
-                                "legendFormat": "replicas created",
+                                "legendFormat": "{{statefulset}}/{{namespace}} replicas created",
                                 "refId": "B"
                             },
                             {
                                 "expr": "min(kube_statefulset_status_replicas_ready{job=\"kube-state-metrics\",statefulset=~\"^[[statefulset]]$\",namespace=~\"^[[namespace]]$\"}) without (instance,pod)",
                                 "format": "time_series",
                                 "intervalFactor": 2,
-                                "legendFormat": "ready",
+                                "legendFormat": "{{statefulset}}/{{namespace}} ready",
                                 "refId": "C"
                             },
                             {
                                 "expr": "min(kube_statefulset_status_replicas_current{job=\"kube-state-metrics\",statefulset=~\"^[[statefulset]]$\",namespace=~\"^[[namespace]]$\"}) without (instance,pod)",
                                 "format": "time_series",
                                 "intervalFactor": 2,
-                                "legendFormat": "replicas of current version",
+                                "legendFormat": "{{statefulset}}/{{namespace}}  replicas current version",
                                 "refId": "D"
                             },
                             {
                                 "expr": "min(kube_statefulset_status_replicas_updated{job=\"kube-state-metrics\",statefulset=~\"^[[statefulset]]$\",namespace=~\"^[[namespace]]$\"}) without (instance,pod)",
                                 "format": "time_series",
                                 "intervalFactor": 2,
-                                "legendFormat": "updated",
+                                "legendFormat": "{{statefulset}}/{{namespace}} replicas updated",
                                 "refId": "E"
                             }
                         ],

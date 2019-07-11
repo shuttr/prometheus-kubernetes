@@ -784,7 +784,7 @@ data:
                         "steppedLine": false,
                         "targets": [
                             {
-                                "expr": "1 - sum(max by (device,node) (node_filesystem_avail_bytes{fstype=~\"ext[24]\"})) / sum(max by (device,node) (node_filesystem_size_bytes{fstype=~\"ext[24]\"}))",
+                                "expr": "1 - sum(max by (device,node) (node_filesystem_avail_bytes{fstype=~\"^(ext[24]|xfs)$\"})) / sum(max by (device,node) (node_filesystem_size_bytes{fstype=~\"^(ext[24]|xfs)$\"}))",
                                 "format": "time_series",
                                 "intervalFactor": 2,
                                 "legendFormat": "Disk",
