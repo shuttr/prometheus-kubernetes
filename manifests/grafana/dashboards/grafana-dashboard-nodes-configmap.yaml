@@ -1022,7 +1022,7 @@ data:
 
                     },
                     "hide": 0,
-                    "datasource": "Prometheus"
+                    "datasource": "Prometheus",
                     "allValue": ".+",
                     "includeAll": true,
                     "label": null,

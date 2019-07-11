@@ -739,7 +739,7 @@ data:
 
                     },
                     "hide": 0,
-                    "datasource": "Prometheus"
+                    "datasource": "Prometheus",
                     "allValue": ".+",
                     "includeAll": true,
                     "label": "Namespace",
@@ -765,7 +765,7 @@ data:
 
                     },
                     "hide": 0,
-                    "datasource": "Prometheus"
+                    "datasource": "Prometheus",
                     "allValue": ".+",
                     "includeAll": true,
                     "label": "Name",

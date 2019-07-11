@@ -353,7 +353,7 @@ data:
                     "current": {
 
                     },
-                    "datasource": "Prometheus"
+                    "datasource": "Prometheus",
                     "allValue": ".+",
                     "includeAll": true,
                     "hide": 0,
@@ -380,7 +380,7 @@ data:
 
                     },
                     "hide": 0,
-                    "datasource": "Prometheus"
+                    "datasource": "Prometheus",
                     "allValue": ".+",
                     "includeAll": true,
                     "label": "Pod",
@@ -405,7 +405,7 @@ data:
                     "current": {
 
                     },
-                    "datasource": "Prometheus"
+                    "datasource": "Prometheus",
                     "allValue": ".+",
                     "includeAll": true,
                     "hide": 0,
