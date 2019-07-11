@@ -172,7 +172,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum (rate (container_cpu_usage_seconds_total{id=\"/\",instance=~\"^[[Node]]$\",container_name!=\"POD\",container_name!=\"\"}[1m])) / sum (machine_cpu_cores{instance=~\"^[[Node]]$\"}) * 100",
+              "expr": "sum (rate (container_cpu_usage_seconds_total{id=\"/\",instance=~\"^[[Node]]$\"}[1m])) / sum (machine_cpu_cores{instance=~\"^[[Node]]$\"}) * 100",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -515,7 +515,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum (rate (container_cpu_usage_seconds_total{id=\"/\",instance=~\"^[[Node]]$\",container_name!=\"POD\",container_name!=\"\"}[1m]))",
+              "expr": "sum (rate (container_cpu_usage_seconds_total{id=\"/\",instance=~\"^[[Node]]$\"}[1m]))",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
