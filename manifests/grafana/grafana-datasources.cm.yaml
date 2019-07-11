@@ -13,7 +13,7 @@ data:
                 "name": "Prometheus",
                 "orgId": 1,
                 "type": "prometheus",
-                "url": "http://prometheus-k8s.prometheus.svc:9090",
+                "url": "http://prometheus-k8s.CUSTOM_NAMESPACE.svc:9090",
                 "version": 1,
                 "isDefault": true
             }
