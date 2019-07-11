@@ -32,7 +32,6 @@ data:
             "rgba(237,129,40,0.89)",
             "rgba(245,54,54,0.9)"
           ],
-          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "format": "percent",
@@ -87,7 +86,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum (container_memory_working_set_bytes{id=\"/\",instance=~\"^$Node$\"}) / sum (machine_memory_bytes{instance=~\"^$Node$\"}) * 100",
+              "expr": "sum (container_memory_working_set_bytes{id=\"/\",instance=~\"^[[Node]]$\"}) / sum (machine_memory_bytes{instance=~\"^[[Node]]$\"}) * 100",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -118,7 +117,6 @@ data:
             "rgba(237,129,40,0.89)",
             "rgba(245,54,54,0.9)"
           ],
-          "datasource": "Prometheus",
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -174,7 +172,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum (rate (container_cpu_usage_seconds_total{id=\"/\",instance=~\"^$Node$\",container_name!=\"POD\",container_name!=\"\"}[1m])) / sum (machine_cpu_cores{instance=~\"^$Node$\"}) * 100",
+              "expr": "sum (rate (container_cpu_usage_seconds_total{id=\"/\",instance=~\"^[[Node]]$\",container_name!=\"POD\",container_name!=\"\"}[1m])) / sum (machine_cpu_cores{instance=~\"^[[Node]]$\"}) * 100",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -204,7 +202,6 @@ data:
             "rgba(237,129,40,0.89)",
             "rgba(245,54,54,0.9)"
           ],
-          "datasource": "Prometheus",
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -260,7 +257,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum (container_fs_usage_bytes{device=~\"^/dev/[nsx][v][bdm][a-z].+$\",id=\"/\",instance=~\"^$Node$\"}) / sum (container_fs_limit_bytes{device=~\"^/dev/[nsx][v][bdm][a-z].+$\",id=\"/\",instance=~\"^$Node$\"}) * 100",
+              "expr": "sum (container_fs_usage_bytes{device=~\"^/dev/[nsx][v][bdm][a-z].+$\",id=\"/\",instance=~\"^[[Node]]$\"}) / sum (container_fs_limit_bytes{device=~\"^/dev/[nsx][v][bdm][a-z].+$\",id=\"/\",instance=~\"^[[Node]]$\"}) * 100",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -292,7 +289,6 @@ data:
             "rgba(237,129,40,0.89)",
             "rgba(245,54,54,0.9)"
           ],
-          "datasource": "Prometheus",
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -348,7 +344,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum (container_memory_working_set_bytes{id=\"/\",instance=~\"^$Node$\"})",
+              "expr": "sum (container_memory_working_set_bytes{id=\"/\",instance=~\"^[[Node]]$\"})",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -379,7 +375,6 @@ data:
             "rgba(237,129,40,0.89)",
             "rgba(245,54,54,0.9)"
           ],
-          "datasource": "Prometheus",
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -435,7 +430,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum (machine_memory_bytes{instance=~\"^$Node$\"})",
+              "expr": "sum (machine_memory_bytes{instance=~\"^[[Node]]$\"})",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -465,7 +460,6 @@ data:
             "rgba(237,129,40,0.89)",
             "rgba(245,54,54,0.9)"
           ],
-          "datasource": "Prometheus",
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -521,7 +515,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum (rate (container_cpu_usage_seconds_total{id=\"/\",instance=~\"^$Node$\",container_name!=\"POD\",container_name!=\"\"}[1m]))",
+              "expr": "sum (rate (container_cpu_usage_seconds_total{id=\"/\",instance=~\"^[[Node]]$\",container_name!=\"POD\",container_name!=\"\"}[1m]))",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -551,7 +545,6 @@ data:
             "rgba(237,129,40,0.89)",
             "rgba(245,54,54,0.9)"
           ],
-          "datasource": "Prometheus",
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -607,7 +600,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum (machine_cpu_cores{instance=~\"^$Node$\"})",
+              "expr": "sum (machine_cpu_cores{instance=~\"^[[Node]]$\"})",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -637,7 +630,6 @@ data:
             "rgba(237,129,40,0.89)",
             "rgba(245,54,54,0.9)"
           ],
-          "datasource": "Prometheus",
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -693,7 +685,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum (container_fs_usage_bytes{device=~\"/dev/[nsx][v][bdm][a-z].+$\",id=\"/\",instance=~\"^$Node$\"})",
+              "expr": "sum (container_fs_usage_bytes{device=~\"/dev/[nsx][v][bdm][a-z].+$\",id=\"/\",instance=~\"^[[Node]]$\"})",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -723,7 +715,6 @@ data:
             "rgba(237,129,40,0.89)",
             "rgba(245,54,54,0.9)"
           ],
-          "datasource": "Prometheus",
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -779,7 +770,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum (container_fs_limit_bytes{device=~\"/dev/[nsx][v][bdm][a-z].+$\",id=\"/\",instance=~\"^$Node$\"})",
+              "expr": "sum (container_fs_limit_bytes{device=~\"/dev/[nsx][v][bdm][a-z].+$\",id=\"/\",instance=~\"^[[Node]]$\"})",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -805,7 +796,6 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "Prometheus",
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -847,7 +837,7 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum (rate (container_network_receive_bytes_total{instance=~\"^$Node$\"}[1m]))",
+              "expr": "sum (rate (container_network_receive_bytes_total{instance=~\"^[[Node]]$\"}[1m]))",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -857,7 +847,7 @@ data:
               "step": 10
             },
             {
-              "expr": "- sum (rate (container_network_transmit_bytes_total{instance=~\"^$Node$\"}[1m]))",
+              "expr": "- sum (rate (container_network_transmit_bytes_total{instance=~\"^[[Node]]$\"}[1m]))",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -914,7 +904,6 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "Prometheus",
           "decimals": 3,
           "editable": true,
           "error": false,
@@ -955,7 +944,7 @@ data:
           "steppedLine": true,
           "targets": [
             {
-              "expr": "sum (rate (container_cpu_usage_seconds_total{image!=\"\",name=~\"^k8s_.*\",instance=~\"^$Node$\",container_name!=\"POD\",container_name!=\"\"}[1m])) by (pod_name)",
+              "expr": "sum (rate (container_cpu_usage_seconds_total{image!=\"\",name=~\"^k8s_.*\",instance=~\"^[[Node]]$\",container_name!=\"POD\",container_name!=\"\"}[1m])) by (pod_name)",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -1012,7 +1001,6 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "Prometheus",
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -1053,7 +1041,7 @@ data:
           "steppedLine": true,
           "targets": [
             {
-              "expr": "sum (container_memory_working_set_bytes{image!=\"\",name=~\"^k8s_.*\",instance=~\"^$Node$\"}) by (pod_name)",
+              "expr": "sum (container_memory_working_set_bytes{image!=\"\",name=~\"^k8s_.*\",instance=~\"^[[Node]]$\"}) by (pod_name)",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -1109,7 +1097,6 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "Prometheus",
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -1150,7 +1137,7 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum (rate (container_network_receive_bytes_total{image!=\"\",name=~\"^k8s_.*\",instance=~\"^$Node$\"}[1m])) by (pod_name)",
+              "expr": "sum (rate (container_network_receive_bytes_total{image!=\"\",name=~\"^k8s_.*\",instance=~\"^[[Node]]$\"}[1m])) by (pod_name)",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -1160,7 +1147,7 @@ data:
               "step": 10
             },
             {
-              "expr": "- sum (rate (container_network_transmit_bytes_total{image!=\"\",name=~\"^k8s_.*\",instance=~\"^$Node$\"}[1m])) by (pod_name)",
+              "expr": "- sum (rate (container_network_transmit_bytes_total{image!=\"\",name=~\"^k8s_.*\",instance=~\"^[[Node]]$\"}[1m])) by (pod_name)",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -1224,8 +1211,8 @@ data:
                   "current": {
 
                   },
-                  "datasource": "Prometheus",
                   "hide": 0,
+                  "datasource": "Prometheus",
                   "allValue": ".+",
                   "includeAll": true,
                   "label": null,

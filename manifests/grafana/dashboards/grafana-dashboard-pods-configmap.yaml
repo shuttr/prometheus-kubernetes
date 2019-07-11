@@ -27,7 +27,6 @@ data:
                         "bars": false,
                         "dashLength": 10,
                         "dashes": false,
-                        "datasource": "Prometheus",
                         "fill": 1,
                         "gridPos": {
 
@@ -146,7 +145,6 @@ data:
                         "bars": false,
                         "dashLength": 10,
                         "dashes": false,
-                        "datasource": "Prometheus",
                         "fill": 1,
                         "gridPos": {
 
@@ -251,7 +249,6 @@ data:
                         "bars": false,
                         "dashLength": 10,
                         "dashes": false,
-                        "datasource": "Prometheus",
                         "fill": 1,
                         "gridPos": {
 
@@ -356,7 +353,7 @@ data:
                     "current": {
 
                     },
-                    "datasource": "Prometheus",
+                    "datasource": "Prometheus"
                     "allValue": ".+",
                     "includeAll": true,
                     "hide": 0,
@@ -382,8 +379,8 @@ data:
                     "current": {
 
                     },
-                    "datasource": "Prometheus",
                     "hide": 0,
+                    "datasource": "Prometheus"
                     "allValue": ".+",
                     "includeAll": true,
                     "label": "Pod",
@@ -408,7 +405,7 @@ data:
                     "current": {
 
                     },
-                    "datasource": "Prometheus",
+                    "datasource": "Prometheus"
                     "allValue": ".+",
                     "includeAll": true,
                     "hide": 0,

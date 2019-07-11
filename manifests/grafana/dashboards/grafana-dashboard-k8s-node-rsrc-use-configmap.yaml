@@ -26,7 +26,6 @@ data:
                         "bars": false,
                         "dashLength": 10,
                         "dashes": false,
-                        "datasource": "Prometheus",
                         "fill": 1,
                         "id": 0,
                         "legend": {
@@ -112,7 +111,6 @@ data:
                         "bars": false,
                         "dashLength": 10,
                         "dashes": false,
-                        "datasource": "Prometheus",
                         "fill": 1,
                         "id": 1,
                         "legend": {
@@ -210,7 +208,6 @@ data:
                         "bars": false,
                         "dashLength": 10,
                         "dashes": false,
-                        "datasource": "Prometheus",
                         "fill": 1,
                         "id": 2,
                         "legend": {
@@ -296,7 +293,6 @@ data:
                         "bars": false,
                         "dashLength": 10,
                         "dashes": false,
-                        "datasource": "Prometheus",
                         "fill": 1,
                         "id": 3,
                         "legend": {
@@ -394,7 +390,6 @@ data:
                         "bars": false,
                         "dashLength": 10,
                         "dashes": false,
-                        "datasource": "Prometheus",
                         "fill": 1,
                         "id": 4,
                         "legend": {
@@ -480,7 +475,6 @@ data:
                         "bars": false,
                         "dashLength": 10,
                         "dashes": false,
-                        "datasource": "Prometheus",
                         "fill": 1,
                         "id": 5,
                         "legend": {
@@ -578,7 +572,6 @@ data:
                         "bars": false,
                         "dashLength": 10,
                         "dashes": false,
-                        "datasource": "Prometheus",
                         "fill": 1,
                         "id": 6,
                         "legend": {
@@ -664,7 +657,6 @@ data:
                         "bars": false,
                         "dashLength": 10,
                         "dashes": false,
-                        "datasource": "Prometheus",
                         "fill": 1,
                         "id": 7,
                         "legend": {
@@ -762,7 +754,6 @@ data:
                         "bars": false,
                         "dashLength": 10,
                         "dashes": false,
-                        "datasource": "Prometheus",
                         "fill": 1,
                         "id": 8,
                         "legend": {
@@ -862,8 +853,8 @@ data:
                         "text": "prod",
                         "value": "prod"
                     },
-                    "datasource": "Prometheus",
                     "hide": 0,
+                    "datasource": "Prometheus",
                     "allValue": ".+",
                     "includeAll": true,
                     "label": "node",

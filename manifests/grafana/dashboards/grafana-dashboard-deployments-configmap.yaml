@@ -31,7 +31,6 @@ data:
             "rgba(237,129,40,0.89)",
             "rgba(50,172,45,0.97)"
           ],
-          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "format": "none",
@@ -113,7 +112,6 @@ data:
             "rgba(237,129,40,0.89)",
             "rgba(50,172,45,0.97)"
           ],
-          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "format": "none",
@@ -195,7 +193,6 @@ data:
             "rgba(237,129,40,0.89)",
             "rgba(50,172,45,0.97)"
           ],
-          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "format": "Bps",
@@ -277,7 +274,6 @@ data:
             "rgba(237,129,40,0.89)",
             "rgba(50,172,45,0.97)"
           ],
-          "datasource": "Prometheus",
           "decimals": null,
           "editable": true,
           "error": false,
@@ -361,7 +357,6 @@ data:
             "rgba(237,129,40,0.89)",
             "rgba(50,172,45,0.97)"
           ],
-          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "format": "none",
@@ -443,7 +438,6 @@ data:
             "rgba(237,129,40,0.89)",
             "rgba(50,172,45,0.97)"
           ],
-          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "format": "none",
@@ -526,7 +520,6 @@ data:
             "rgba(237,129,40,0.89)",
             "rgba(50,172,45,0.97)"
           ],
-          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "format": "none",
@@ -605,7 +598,6 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 1,
@@ -727,7 +719,6 @@ data:
           {
             "allValue": ".*",
             "current": {},
-            "datasource": "Prometheus",
             "hide": 1,
             "includeAll": false,
             "label": "Namespace",
@@ -746,8 +737,8 @@ data:
           },
           {
             "current": {},
-            "datasource": "Prometheus",
             "hide": 0,
+            "datasource": "Prometheus",
             "allValue": ".+",
             "includeAll": false,
             "label": "Deployment",
@@ -772,9 +763,9 @@ data:
                   "current": {
 
                   },
-                  "datasource": "Prometheus",
                   "hide": 0,
                   "allValue": ".+",
+                  "datasource": "Prometheus",
                   "includeAll": true,
                   "label": "Namespace",
                   "multi": false,
@@ -797,7 +788,7 @@ data:
               {
                   "current": {
 
-                  },
+                  }, 
                   "datasource": "Prometheus",
                   "allValue": ".+",
                   "includeAll": false,
