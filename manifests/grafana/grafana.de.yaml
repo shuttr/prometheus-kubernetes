@@ -41,6 +41,9 @@ spec:
         - mountPath: /grafana-dashboard-definitions/0/k8s-coredns
           name: grafana-dashboard-k8s-coredns
           readOnly: false
+        - mountPath: /grafana-dashboard-definitions/0/kuberhealthy
+          name: grafana-dashboard-kuberhealthy
+          readOnly: false
         - mountPath: /grafana-dashboard-definitions/0/k8s-cluster-rsrc-use
           name: grafana-dashboard-k8s-cluster-rsrc-use
           readOnly: false
@@ -125,3 +128,6 @@ spec:
       - configMap:
           name: grafana-dashboard-coredns
         name: grafana-dashboard-coredns
+      - configMap:
+          name: grafana-dashboard-kuberhealthy
+        name: grafana-dashboard-kuberhealthy
