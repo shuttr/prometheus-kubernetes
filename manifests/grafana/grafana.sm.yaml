@@ -15,4 +15,4 @@ spec:
   - targetPort: 3000
     interval: 30s
     path: /metrics
-  jobLabel: grafana-k8s
+  jobLabel: k8s-app

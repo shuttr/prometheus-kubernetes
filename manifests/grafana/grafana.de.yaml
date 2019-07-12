@@ -38,6 +38,9 @@ spec:
         - mountPath: /etc/grafana/provisioning/dashboards
           name: grafana-dashboards
           readOnly: false
+        - mountPath: /grafana-dashboard-definitions/0/k8s-coredns
+          name: grafana-dashboard-k8s-coredns
+          readOnly: false
         - mountPath: /grafana-dashboard-definitions/0/k8s-cluster-rsrc-use
           name: grafana-dashboard-k8s-cluster-rsrc-use
           readOnly: false
@@ -119,3 +122,6 @@ spec:
       - configMap:
           name: grafana-dashboard-daemonset
         name: grafana-dashboard-daemonset
+      - configMap:
+          name: grafana-dashboard-coredns
+        name: grafana-dashboard-coredns
