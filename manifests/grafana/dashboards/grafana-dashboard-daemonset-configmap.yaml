@@ -329,7 +329,7 @@ data:
                         "tableColumn": "",
                         "targets": [
                             {
-                                "expr": "sum(sum(kube_daemonset_desired_number_scheduled{job=\"kube-state-metrics\",namespace=~\"^[[namespace]]$\",daemonset=~\"^[[daemonset]]$\"}) by (daemonset,namespace))",
+                                "expr": "sum(sum(kube_daemonset_status_desired_number_scheduled{job=\"kube-state-metrics\",namespace=~\"^[[namespace]]$\",daemonset=~\"^[[daemonset]]$\"}) by (daemonset,namespace))",
                                 "format": "time_series",
                                 "intervalFactor": 2,
                                 "legendFormat": ""
