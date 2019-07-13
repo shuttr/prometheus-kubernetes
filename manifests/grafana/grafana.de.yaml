@@ -47,6 +47,9 @@ spec:
         - mountPath: /grafana-dashboard-definitions/0/cluster-autoscaler
           name: grafana-dashboard-cluster-autoscaler
           readOnly: false
+        - mountPath: /grafana-dashboard-definitions/0/k8s-pods-namespace-node
+          name: grafana-dashboard-k8s-pods-namespace-node
+          readOnly: false
         - mountPath: /grafana-dashboard-definitions/0/k8s-cluster-rsrc-use
           name: grafana-dashboard-k8s-cluster-rsrc-use
           readOnly: false
@@ -137,4 +140,6 @@ spec:
       - configMap:
           name: grafana-dashboard-cluster-autoscaler
         name: grafana-dashboard-cluster-autoscaler
-
+      - configMap:
+          name: grafana-dashboard-k8s-pods-namespace-node
+        name: grafana-dashboard-k8s-pods-namespace-node
