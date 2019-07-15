@@ -50,6 +50,9 @@ spec:
         - mountPath: /grafana-dashboard-definitions/0/k8s-pods-namespace-node
           name: grafana-dashboard-k8s-pods-namespace-node
           readOnly: false
+        - mountPath: /grafana-dashboard-definitions/0/k8s-per-namespace-node
+          name: grafana-dashboard-k8s-per-namespace-node
+          readOnly: false
         - mountPath: /grafana-dashboard-definitions/0/k8s-cluster-rsrc-use
           name: grafana-dashboard-k8s-cluster-rsrc-use
           readOnly: false
@@ -143,3 +146,6 @@ spec:
       - configMap:
           name: grafana-dashboard-k8s-pods-namespace-node
         name: grafana-dashboard-k8s-pods-namespace-node
+      - configMap:
+          name: grafana-dashboard-k8s-per-namespace-nodes
+        name: grafana-dashboard-k8s-per-namespace-nodes
