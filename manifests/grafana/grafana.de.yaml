@@ -44,6 +44,12 @@ spec:
         - mountPath: /grafana-dashboard-definitions/0/kuberhealthy
           name: grafana-dashboard-kuberhealthy
           readOnly: false
+        - mountPath: /grafana-dashboard-definitions/0/cluster-autoscaler
+          name: grafana-dashboard-cluster-autoscaler
+          readOnly: false
+        - mountPath: /grafana-dashboard-definitions/0/k8s-pods-namespace-node
+          name: grafana-dashboard-k8s-pods-namespace-node
+          readOnly: false
         - mountPath: /grafana-dashboard-definitions/0/k8s-cluster-rsrc-use
           name: grafana-dashboard-k8s-cluster-rsrc-use
           readOnly: false
@@ -117,7 +123,7 @@ spec:
           name: grafana-dashboard-statefulset
         name: grafana-dashboard-statefulset
       - configMap:
-          name: grafana-dashboard-deployents
+          name: grafana-dashboard-deployments
         name: grafana-dashboard-deployments
       - configMap:
           name: grafana-dashboard-k8s-cluster-usage
@@ -131,3 +137,9 @@ spec:
       - configMap:
           name: grafana-dashboard-kuberhealthy
         name: grafana-dashboard-kuberhealthy
+      - configMap:
+          name: grafana-dashboard-cluster-autoscaler
+        name: grafana-dashboard-cluster-autoscaler
+      - configMap:
+          name: grafana-dashboard-k8s-pods-namespace-node
+        name: grafana-dashboard-k8s-pods-namespace-node
