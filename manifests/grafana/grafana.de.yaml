@@ -123,7 +123,7 @@ spec:
           name: grafana-dashboard-statefulset
         name: grafana-dashboard-statefulset
       - configMap:
-          name: grafana-dashboard-deployents
+          name: grafana-dashboard-deployments
         name: grafana-dashboard-deployments
       - configMap:
           name: grafana-dashboard-k8s-cluster-usage
